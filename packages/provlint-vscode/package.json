@@ -1,0 +1,71 @@
+{
+  "name": "provlint",
+  "displayName": "ProvLint",
+  "description": "Lint Kickstart, AutoYaST, and Autoinstall provisioning files",
+  "version": "0.1.0",
+  "publisher": "provlint",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "onLanguage:xml",
+    "onLanguage:yaml",
+    "onLanguage:plaintext",
+    "workspaceContains:**/*.ks",
+    "workspaceContains:**/*.cfg"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "ProvLint",
+      "properties": {
+        "provlint.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable ProvLint diagnostics"
+        },
+        "provlint.disabledRules": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "List of rule codes to disable (e.g. BP-001, SEC-005)"
+        },
+        "provlint.debounceMs": {
+          "type": "number",
+          "default": 500,
+          "description": "Debounce delay in milliseconds before linting"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "kickstart",
+        "aliases": [
+          "Kickstart"
+        ],
+        "extensions": [
+          ".ks",
+          ".cfg"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --loader:.wasm=file",
+    "watch": "npm run build -- --watch",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  }
+}

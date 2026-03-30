@@ -1,0 +1,10 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["%packages", "%end"],
+    ["%pre", "%end"],
+    ["%post", "%end"]
+  ]
+}
