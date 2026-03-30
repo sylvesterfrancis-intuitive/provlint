@@ -2,7 +2,6 @@
 name = "provlint-core"
 version.workspace = true
 edition.workspace = true
-license.workspace = true
 description = "Core parsing and linting engine for Kickstart, AutoYaST, and Autoinstall files"
 
 [dependencies]
