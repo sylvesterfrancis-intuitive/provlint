@@ -4,3 +4,4 @@ dist/
 wasm/
 *.wasm
 pkg/
+.DS_Store
