@@ -1,0 +1,17 @@
+[package]
+name = "provlint-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CLI for provlint - lint Kickstart, AutoYaST, and Autoinstall files"
+
+[[bin]]
+name = "provlint"
+path = "src/main.rs"
+
+[dependencies]
+provlint-core = { path = "../provlint-core" }
+clap = { version = "4", features = ["derive"] }
+serde_json = "1"
+ariadne = "0.4"
+walkdir = "2"
