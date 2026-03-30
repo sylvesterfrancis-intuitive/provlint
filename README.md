@@ -151,4 +151,4 @@ npm install && npm run build && npm run package
 
 ## License
 
-MIT
+AGPL-3.0 — see [LICENSE](LICENSE)
