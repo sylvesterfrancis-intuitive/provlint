@@ -1,0 +1,20 @@
+{
+  "name": "@provlint/core",
+  "version": "0.1.0",
+  "description": "WASM-powered linter for Kickstart, AutoYaST, and Autoinstall files",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "wasm"
+  ],
+  "scripts": {
+    "build:wasm": "wasm-pack build ../../crates/provlint-wasm --target web --out-dir ../../packages/provlint-npm/wasm",
+    "build:ts": "tsc",
+    "build": "npm run build:wasm && npm run build:ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

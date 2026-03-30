@@ -1,0 +1,17 @@
+{
+  "name": "provlint-wasm",
+  "type": "module",
+  "description": "WASM bindings for provlint",
+  "version": "0.1.0",
+  "license": "MIT",
+  "files": [
+    "provlint_wasm_bg.wasm",
+    "provlint_wasm.js",
+    "provlint_wasm.d.ts"
+  ],
+  "main": "provlint_wasm.js",
+  "types": "provlint_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
